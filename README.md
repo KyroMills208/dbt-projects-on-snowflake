@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains an extended demo of dbt Projects on Snowflake, showcasing data quality testing, performance optimization, documentation, CI/CD workflows, and advanced Snowflake integration features.
+Welcome to my dbt projects on snowflake hands on lab! 
 
 ## Repository Structure
 
