@@ -1,0 +1,22 @@
+tasty_bytes_dbt_demo:
+  outputs:
+    dev:
+      type: snowflake
+      account: ""
+      user: ""
+      database: tasty_bytes_dbt_db
+      schema: dev_analytics
+      warehouse: dbt_dev_wh
+      role: dbt_developer_role
+      
+    prod:
+      type: snowflake
+      account: ""
+      user: ""
+      database: tasty_bytes_dbt_db
+      schema: analytics
+      warehouse: dbt_prod_wh
+      role: dbt_prod_role
+      threads: 8
+      
+  target: dev
