@@ -177,12 +177,10 @@ GRANT CREATE VIEW ON SCHEMA tasty_bytes_dbt_db.marts TO ROLE dbt_developer_role;
 GRANT CREATE VIEW ON SCHEMA tasty_bytes_dbt_db.marts TO ROLE dbt_prod_role;
 
 -- =====================================================
--- 5. CREATE SAMPLE DATA TABLES (Optional)
+-- 5. CREATE SAMPLE DATA TABLES 
 -- =====================================================
--- Uncomment the following section if you want to create sample data
--- for testing the dbt models
 
-/*
+
 -- Create sample raw data tables
 USE SCHEMA tasty_bytes_dbt_db.raw;
 
@@ -236,16 +234,16 @@ INSERT INTO raw_pos_menu VALUES
 (202, 'Tacos', 'Guac n Roll', 'Main', 'Beef Tacos', CURRENT_TIMESTAMP()),
 (203, 'Ice Cream', 'Freezing Point', 'Dessert', 'Vanilla Cone', CURRENT_TIMESTAMP()),
 (204, 'Ice Cream', 'Freezing Point', 'Dessert', 'Chocolate Sundae', CURRENT_TIMESTAMP());
-*/
+
 
 -- =====================================================
 -- 6. GRANT ROLES TO USERS
 -- =====================================================
 -- Replace 'YOUR_USERNAME' with your actual Snowflake username
 
--- GRANT ROLE dbt_developer_role TO USER YOUR_USERNAME;
--- GRANT ROLE analyst_role TO USER YOUR_USERNAME;
--- GRANT ROLE finance_role TO USER YOUR_USERNAME;
+GRANT ROLE dbt_developer_role TO USER YOUR_USERNAME;
+GRANT ROLE analyst_role TO USER YOUR_USERNAME;
+GRANT ROLE finance_role TO USER YOUR_USERNAME;
 
 -- =====================================================
 -- 7. VERIFICATION QUERIES
@@ -262,13 +260,3 @@ SHOW WAREHOUSES LIKE 'dbt_%';
 SHOW ROLES LIKE 'dbt_%';
 SHOW ROLES LIKE 'analyst_role';
 SHOW ROLES LIKE 'finance_role';
-
--- =====================================================
--- SETUP COMPLETE
--- =====================================================
--- Next steps:
--- 1. Update your profiles.yml with your account and user information
--- 2. Grant the appropriate roles to your user
--- 3. Run: dbt deps
--- 4. Run: dbt build
--- =====================================================
