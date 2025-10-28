@@ -73,29 +73,11 @@ dbt build
 - Query tags for cost tracking
 - Clustering and performance optimization
 
-**Commands to run:**
-```bash
-# Run incremental model
-dbt run --select sales_incremental
-
-# Run dynamic table
-dbt run --select sales_dynamic
-
-# Check query tags in Snowflake
-```
-
-**Talking Points:**
-- Explain incremental strategy benefits
-- Show merge_update_columns configuration
-- Demonstrate dynamic table refresh behavior
-- Discuss query tag benefits for cost tracking
-
-### Section 3: Documentation & Macros (10 minutes)
+### Section 3: Macros (10 minutes)
 
 **Key Topics:**
-- Generate dbt docs
-- DAG visualization
-- Optional: Custom macros for data masking
+
+Custom macros for data masking
 
 **Commands to run:**
 ```bash
