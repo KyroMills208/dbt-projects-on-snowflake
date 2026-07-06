@@ -54,6 +54,39 @@ models:
           - dbt_utils.expression_is_true:
               expression: "> 0"
 
+  - name: customers_by_truck
+    description: "Monthly unique customer counts by truck brand and food type"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - truck_brand_name
+            - menu_type
+            - sales_month
+      - dbt_utils.expression_is_true:
+          expression: "unique_customers > 0"
+    columns:
+      - name: truck_brand_name
+        description: "Brand name of the food truck"
+        tests:
+          - not_null
+
+      - name: menu_type
+        description: "Type of menu offered"
+        tests:
+          - not_null
+
+      - name: sales_month
+        description: "First day of the month for the aggregation period"
+        tests:
+          - not_null
+
+      - name: unique_customers
+        description: "Count of distinct customers who placed an order at this truck brand / food type in the month"
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+
   - name: sales_incremental
     description: "Incremental sales model with merge strategies"
     tests:
